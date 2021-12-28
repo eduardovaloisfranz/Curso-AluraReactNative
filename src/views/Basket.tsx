@@ -1,5 +1,5 @@
-
 import { Alert, Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import TextRender from '../Shared/TextRender';
 import ImageRender from '../Shared/ImageRender';
 
 const Basket = () => {
@@ -7,37 +7,27 @@ const Basket = () => {
   return <View>
     <ImageRender image={require('@assets/topo.png')} description='Detalhe da Cesta'></ImageRender>
       <View style={styles.padding}>
-      <Text style={{...styles.h1, ...styles.padding}}>Cesta de Verduras</Text>
+      <TextRender color={'#363536'} fontSize="h1" mtType="bold">Cesta de Verduras</TextRender>
       <View style={{ ...styles.padding, ...styles.flexRow, ...styles.aiCenter}}>
-        <Image style={styles.smallIcon} source={require('@assets/logo.png')}></Image>
-        <Text style={{...styles.padding, ...styles.farmerOwner}}>Jenny Jack Farm</Text>
+        <Image style={styles.smallIcon} source={require('@assets/logo.png')}></Image>        
+        <TextRender bothPadding={10} color="black" mtType='regular' fontSize={'h4'}> Jenny Jack Farm</TextRender>
       </View>
-      <Text style={{...styles.padding, ...styles.basketDescription}}>
-        Uma cesta com produtos seleecionados cuidadosamente da fazenda direto para sua cozinha
-      </Text>      
-      <Text style={{...styles.padding, ...styles.priceLabel}}>R$ 40,00</Text>    
-      <Pressable style={{...styles.btnStyle, ...styles.aiCenter, ...styles.jcCenter}} onPress={onPress} >
-        <Text style={styles.buyButton}>Comprar</Text>
+      <TextRender color="#7b7b7b" fontSize={'h5'} bothPadding={10}>Uma cesta com produtos selecionados cuidadosamente da fazenda direto para sua cozinha</TextRender>      
+      <TextRender fontSize={'h1'} color='#009B75' mtType='bold' bothPadding={10}>R$ 40,00</TextRender>
+      <Pressable style={{...styles.btnStyle, ...styles.aiCenter, ...styles.jcCenter}} onPress={onPress} >        
+        <TextRender color="#fff" mtType='bold' fontSize={'h4'}>Comprar</TextRender>
       </Pressable>
       </View>
-
   </View>    
   
 }
 export default Basket
 
 const styles = StyleSheet.create({
-  padding: {
-    paddingTop: 10,
-    paddingBottom: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
+  padding: {    
+    paddingVertical: 10,
+    paddingHorizontal: 10
   },
-  farmerOwner: {
-    fontSize: 16,
-    fontWeight: 'normal',
-    color: 'black'
-  },  
   smallIcon: {
     width: 40,
     height: 40,
@@ -56,30 +46,11 @@ const styles = StyleSheet.create({
   },
   aiEnd: {
     alignItems: 'flex-end',
-  },  
-  h1: {
-    fontSize: 24,
-    color: '#363536',
-    fontWeight: 'bold',    
-  },
-  basketDescription : {
-    fontSize: 16,
-    color: '#7B7B7B',
-  },
-  priceLabel: {
-    fontSize: 30,
-    color: '#009B75',
-    fontWeight: 'bold'
-  },
+  }, 
   btnStyle:  {
     margin: 10,
     backgroundColor: '#009B75',
     height: 50,
     borderRadius: 10
-  },
-  buyButton: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  }
+  }  
 })
