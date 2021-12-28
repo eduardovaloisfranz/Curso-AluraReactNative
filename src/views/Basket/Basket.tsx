@@ -8,8 +8,7 @@ interface BasketProps {
 }
 
 const Basket = (props: BasketProps) => {     
-    return <View>    
-    
+    return <View>
     <ImageRender image={props.basket.top.image} description={props.basket.top.title}></ImageRender>
     <View style={styles.padding}>
       <BasketDetail detail={props.basket.detail}></BasketDetail>  

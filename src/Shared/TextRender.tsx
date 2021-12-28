@@ -1,6 +1,6 @@
 import { ReactChild, ReactChildren } from "react";
 import { Text } from "react-native";
-interface AuxProps {
+export interface AuxProps {
     children: ReactChild | ReactChildren;
   }
 interface propsType extends AuxProps{

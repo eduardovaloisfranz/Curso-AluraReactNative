@@ -1,9 +1,11 @@
 export class BasketModel {
     top: BasketTop;
     detail: BasketDetailModel
+    items: BasketItemsModel
     constructor(basketDetail?: BasketModel) {
         this.top = basketDetail?.top  || new BasketTop();
         this.detail = basketDetail?.detail || new BasketDetailModel();
+        this.items = basketDetail?.items || new BasketItemsModel();
     }
 }
 
@@ -28,5 +30,23 @@ export class BasketDetailModel {
         this.price = basketDetail?.price || 0        
         this.description = basketDetail?.description || ''
         this.image = basketDetail?.image
+    }
+}
+
+export class BasketItemsModel {
+    title: string
+    items: BasketItemModel[]
+    constructor(basketItems?: BasketItemsModel) {
+        this.title = basketItems?.title || ''
+        this.items = basketItems?.items || []
+    }
+}
+
+export class BasketItemModel {
+    name: string
+    image: any
+    constructor(basketItem?: BasketItemModel) { 
+        this.name = basketItem?.name || ''
+        this.image = basketItem?.image
     }
 }
