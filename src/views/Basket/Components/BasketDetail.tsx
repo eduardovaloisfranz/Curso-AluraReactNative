@@ -1,7 +1,6 @@
 import TextRender from "@shared/TextRender"
 
 import { Alert, Image, Pressable, StyleSheet, View } from "react-native";
-//import TextRender from "Shared/TextRender";
 const BasketDetail = () => {
     const onPress = () => { Alert.alert('Test press btn!')}
     return <>
