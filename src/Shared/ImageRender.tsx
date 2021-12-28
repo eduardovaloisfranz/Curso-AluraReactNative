@@ -5,19 +5,19 @@ export interface ImageRenderProps {
     image: any
 }
 const ImageRender = (props: ImageRenderProps) : JSX.Element => {    
-    return <View>
+    return <>
          <Image
             style={styles.imageStyle}
             source={props.image}
          >
-         </Image>         
-        <Text style={styles.descriptionStyle} >{props.description} </Text>   
-         </View>
+         </Image>
+        <Text style={styles.descriptionStyle} >{props.description}</Text>   
+         </>
 }
 const styles = StyleSheet.create({
     imageStyle: {
         width: '100%',
-        maxHeight: '60%'
+        maxHeight: '40%'
     },
     descriptionStyle: {
         position: 'absolute',
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         color: '#f7f7f7',
-        paddingTop: 16
+        paddingTop: 16,
     }
 })
 export default ImageRender
