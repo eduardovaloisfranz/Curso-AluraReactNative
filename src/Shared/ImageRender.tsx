@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native"
+import { Image, StyleSheet, Text } from "react-native"
 
 export interface ImageRenderProps {    
     description: string,    

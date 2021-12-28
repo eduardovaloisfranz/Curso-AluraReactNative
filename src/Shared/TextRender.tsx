@@ -13,8 +13,6 @@ interface propsType extends AuxProps{
     bothPadding?: number
 }
 
-
-//type fontType = 'MontserratRegular' | 'MontserratBold' | 'MontserratItalic'
 type montserratType = 'regular' | 'bold' | 'regularItalic'
 
 type fontTypeSize = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p1' | 'p2' | 'p3' | 'p4' | 'p5' | 'p6'
@@ -72,7 +70,7 @@ const TextRender = (props: propsType) => {
                 return 'MontserratRegularItalic'
             default:
                 return 'MontserratRegular'
-        }        
+        }
      }
 
      const getPadding = (props: propsType, sideComparator: 'vertical' | 'horizontal') : number => {
@@ -84,7 +82,7 @@ const TextRender = (props: propsType) => {
             }else {
                 return props.paddingHorizontal || 0
             }
-        }         
+        }
      }
     const style : any  = {
         fontSize: getFontSize(props.fontSize),

@@ -4,26 +4,29 @@ module.exports = function(api) {
     presets: ['babel-preset-expo'],
     plugins: [
      ['module-resolver', {
-       root: ['.'],
        extensions: [
-         '.ts',
-         '.tsx',
-          '.js',
-          '.jsx',
-          '.json',
-          '.svg',
-          '.jpg'
-       ],
-       alias: [
-         {
+        '.js',
+        '.jsx',
+        '.ts',
+        '.tsx',
+        '.android.js',
+        '.android.tsx',
+        '.ios.js',
+        '.ios.tsx',
+        '.jpg',
+        '.png',
+        ],
+        alias: [
+          {
             '*': './src',
             '@app': './src',
             '@assets': './assets',
             '@views': './src/views',
             '@shared': './src/shared',
-         }
-       ]
-     }]
+          }
+        ],
+        //root: ['.'],
+      }]
     ]
   };
 };
