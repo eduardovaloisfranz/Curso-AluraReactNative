@@ -4,6 +4,8 @@ import Basket from './src/views/Basket/Basket'
 import { useFonts, Montserrat_400Regular, Montserrat_700Bold, Montserrat_400Regular_Italic } from '@expo-google-fonts/montserrat';
 import { BasketModel } from 'views/Basket/Basket.model';
 import basketMock from './mocks/Basket.mock';
+import React from 'react';
+import AppLoading from 'expo-app-loading';
 export default function App() {
   const  [fontLoaded] = useFonts({
     "MontserratRegular": Montserrat_400Regular,
@@ -12,7 +14,7 @@ export default function App() {
   })
   const basket: BasketModel = basketMock
   if(!fontLoaded) { 
-    return <View></View>
+    return <AppLoading/>
   }else {
     
     return (
