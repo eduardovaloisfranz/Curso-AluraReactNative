@@ -1,17 +1,21 @@
 import TextRender from "@shared/TextRender"
 
 import { Alert, Image, Pressable, StyleSheet, View } from "react-native";
-const BasketDetail = () => {
+import { BasketDetailModel } from "../Basket.model";
+interface BasketDetailProps {
+  detail: BasketDetailModel
+}
+const BasketDetail = (props: BasketDetailProps) => {
     const onPress = () => { Alert.alert('Test press btn!')}
     return <>
     
-    <TextRender color={'#363536'} fontSize="h1" mtType="bold">Cesta de Verduras</TextRender>
+    <TextRender color={'#363536'} fontSize="h1" mtType="bold">{props.detail.name}</TextRender>
       <View style={{ ...styles.padding, ...styles.flexRow, ...styles.aiCenter}}>
-        <Image style={styles.smallIcon} source={require('@assets/logo.png')}></Image>        
-        <TextRender bothPadding={10} color="black" mtType='regular' fontSize={'h4'}> Jenny Jack Farm</TextRender>
+        <Image style={styles.smallIcon} source={props.detail.image}></Image>        
+        <TextRender bothPadding={10} color="black" mtType='regular' fontSize={'h4'}>{props.detail.farmOwner}</TextRender>
       </View>
-      <TextRender color="#7b7b7b" fontSize={'h5'} bothPadding={10}>Uma cesta com produtos selecionados cuidadosamente da fazenda direto para sua cozinha</TextRender>      
-      <TextRender fontSize={'h1'} color='#009B75' mtType='bold' bothPadding={10}>R$ 40,00</TextRender>
+      <TextRender color="#7b7b7b" fontSize={'h5'} bothPadding={10}>{props.detail.description}</TextRender>
+      <TextRender fontSize={'h1'} color='#009B75' mtType='bold' bothPadding={10}>{'R$: ' + props.detail.price}</TextRender>
       <Pressable style={{...styles.btnStyle, ...styles.aiCenter, ...styles.jcCenter}} onPress={onPress} >        
         <TextRender color="#fff" mtType='bold' fontSize={'h4'}>Comprar</TextRender>
       </Pressable>

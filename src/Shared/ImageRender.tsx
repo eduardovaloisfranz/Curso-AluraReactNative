@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text } from "react-native"
 
-export interface ImageRenderProps {    
+export interface ImageRenderProps {  
     description: string,    
     image: any
 }

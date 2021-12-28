@@ -1,15 +1,22 @@
-import { StyleSheet, View } from 'react-native';
+import { Alert, Image, StyleSheet, Text, View } from 'react-native';
 import ImageRender from '../../shared/ImageRender';
+import { BasketModel } from './Basket.model';
 import BasketDetail from './Components/BasketDetail';
 
-const Basket = () => {
-  
-  return <View>
-    <ImageRender image={require('@assets/topo.png')} description='Detalhe da Cesta'></ImageRender>
+interface BasketProps {
+  basket: BasketModel
+}
+
+const Basket = (props: BasketProps) => {     
+    return <View>    
+    
+    <ImageRender image={props.basket.top.image} description={props.basket.top.title}></ImageRender>
     <View style={styles.padding}>
-      <BasketDetail></BasketDetail>  
+      <BasketDetail detail={props.basket.detail}></BasketDetail>  
      </View>
   </View>    
+  
+  
   
 }
 export default Basket
