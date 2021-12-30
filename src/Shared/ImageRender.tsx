@@ -1,13 +1,15 @@
-import { Image, StyleSheet, Text } from "react-native"
+import { Dimensions, Image, StyleProp, StyleSheet, Text, View, ViewStyle } from "react-native"
 
 export interface ImageRenderProps {  
     description: string,    
-    image: any
+    image: any,
+    style?: StyleProp<ViewStyle>,
 }
+const windowHeight = Dimensions.get('screen').height;
 const ImageRender = (props: ImageRenderProps) : JSX.Element => {    
     return <>
          <Image
-            style={styles.imageStyle}
+            style={{...styles.imageStyle, ...props.style as any}}
             source={props.image}
          >
          </Image>
@@ -17,7 +19,7 @@ const ImageRender = (props: ImageRenderProps) : JSX.Element => {
 const styles = StyleSheet.create({
     imageStyle: {
         width: '100%',
-        maxHeight: '40%'
+        height: windowHeight * 0.4,
     },
     descriptionStyle: {
         position: 'absolute',

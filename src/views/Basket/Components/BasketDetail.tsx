@@ -1,9 +1,7 @@
 import TextRender from "@shared/TextRender";
-import TheButton from '@shared/TheButton'
-
+import TheButton from '@shared/TheButton';
 import { Alert, Image, StyleSheet, View } from "react-native";
 import { BasketDetailModel } from "../Basket.model";
-
 interface BasketDetailProps {
   detail: BasketDetailModel
 }
@@ -15,7 +13,7 @@ const BasketDetail = (props: BasketDetailProps) => {
       const parseNumberToLocaleMoney = (number: number)  => {
         return `R$ ${number.toFixed(2)}`
       }
-    return <>    
+    return <View>
     <TextRender color={'#363536'} fontSize="h1" mtType="bold">{props.detail.name}</TextRender>
       <View style={{ ...styles.padding, ...styles.flexRow, ...styles.aiCenter}}>
         <Image style={styles.smallIcon} source={props.detail.image}></Image>
@@ -23,8 +21,8 @@ const BasketDetail = (props: BasketDetailProps) => {
       </View>
       <TextRender color="#7b7b7b" fontSize="h5" bothPadding={10}>{props.detail.description}</TextRender>
       <TextRender fontSize={'h1'} color='#009B75' mtType='bold' bothPadding={10}>{parseNumberToLocaleMoney(props.detail.price)}</TextRender>
-      <TheButton onPress={onPress}>Comprar</TheButton>
-    </>
+      <TheButton onPress={onPress}>Comprar</TheButton>      
+    </View>
 }
 const styles = StyleSheet.create({
     padding: {    
