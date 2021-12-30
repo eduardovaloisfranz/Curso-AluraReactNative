@@ -1,7 +1,7 @@
 import { Montserrat_400Regular, Montserrat_400Regular_Italic, Montserrat_700Bold, useFonts } from '@expo-google-fonts/montserrat';
 import AppLoading from 'expo-app-loading';
 import React from 'react';
-import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
+import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { BasketModel } from 'views/Basket/Basket.model';
 import basketMock from './mocks/Basket.mock';
@@ -18,13 +18,10 @@ export default function App() {
   }else {
     
     return (
-     //<SafeAreaView>
-      
-      <SafeAreaProvider>        
+      <SafeAreaProvider style={{flex: 1}}>
         <StatusBar/>      
-      <Basket basket={basket}></Basket>        
-        </SafeAreaProvider>
-    // </SafeAreaView>
+      <Basket basket={basket}></Basket>
+        </SafeAreaProvider>    
   );
 }
 }

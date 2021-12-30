@@ -1,6 +1,6 @@
 import TextRender from "@shared/TextRender"
 import React from "react"
-import { FlatList, StyleProp, StyleSheet, View, ViewStyle } from "react-native"
+import { FlatList, StyleProp, View, ViewStyle } from "react-native"
 import { Avatar, ListItem } from "react-native-elements"
 import { BasketItemModel, BasketItemsModel } from "../Basket.model"
 
