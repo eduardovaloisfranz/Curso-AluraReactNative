@@ -15,7 +15,9 @@ module.exports = function(api) {
             '.json',
           ],
           alias: {
-            '@services': './src/views/services',            
+            '@services': './src/views/services',
+            '@mocks': './src/mocks',
+            '@models': './src/models',
           },
         },
       ],

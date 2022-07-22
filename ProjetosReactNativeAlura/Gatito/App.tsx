@@ -1,12 +1,21 @@
-import React from "react";
-
-//import Services from "./src/views/services/Index";
 import Services from "@services/Index";
-
-
-export default function App() {
+import { NativeBaseProvider } from "native-base";
+import React from "react";
+import { SafeAreaView, StatusBar } from "react-native";
+import serviceList from "./mocks/Services.mocks";
+export default function App() {  
+  const config = {
+    dependencies: { 
+      'linear-gradient': require('expo-linear-gradient').LinearGradient
+    }
+  }
   return <>
-      <Services></Services>    
+   <NativeBaseProvider config={config}>
+        <SafeAreaView>
+          <StatusBar/>
+            <Services services={serviceList}></Services>
+        </SafeAreaView>
+    </NativeBaseProvider>
   </>
 }
 
